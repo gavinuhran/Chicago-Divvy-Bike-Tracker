@@ -16,12 +16,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var stations = [[String: String]]()
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         let urlString = "https://feeds.divvybikes.com/stations/stations.json"
-        
-        
-       
+        if let url = URL(string: urlString) //if statement checks to see if the url if valid
+        {
+            if let myData = try? Data(contentsOf: url, options: []) //returns data objects and checks for error
+            {
+                let json = JSON(myData)
+                print(json["stationBeanList"][id].stringValue)
+                parse(myData: json)
+            }
+        }
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

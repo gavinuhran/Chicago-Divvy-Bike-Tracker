@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WUO-QQ-Igf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WUO-QQ-Igf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="850" y="-645"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="cyR-Sr-39s">
             <objects>
-                <viewController id="5XT-y2-fvl" sceneMemberID="viewController">
+                <viewController id="5XT-y2-fvl" customClass="DetailViewController" customModule="divvyBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ira-Sn-XBJ"/>
                         <viewControllerLayoutGuide type="bottom" id="q8e-vb-wri"/>
@@ -103,6 +103,9 @@
                             <constraint firstItem="weN-ZV-Eu0" firstAttribute="leading" secondItem="wFD-qw-7Iw" secondAttribute="leading" id="wmN-UB-tgz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myTextView" destination="weN-ZV-Eu0" id="F8v-7A-MG2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dp8-d5-1a3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

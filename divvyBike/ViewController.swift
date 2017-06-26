@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var myTableView: UITableView!
 
     
-    var petition = [[String: String]]()
+    var stations = [[String: String]]()
     override func viewDidLoad()
     {
         
@@ -36,6 +36,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = station["location"]
         cell.detailTextLabel?.text = station["dock"]
         return cell
+    }
+    func parse(myData: JSON)
+    {
+        for elements in myData["results"].arrayValue
+        {
+            let title = elements["title"].stringValue
+            let id = elements["id"].stringValue
+            let body = elements["body"].stringValue
+            
+            let obj = ["title": title, "id": id, "body": body]
+            stations.append(obj)
+        }
+        myTableView.reloadData()
+        
     }
 }
 

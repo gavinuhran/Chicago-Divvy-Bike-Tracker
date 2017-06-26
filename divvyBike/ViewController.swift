@@ -43,6 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.detailTextLabel?.text = station["dock"]
         return cell
     }
+    
     func parse(myData: JSON)
     {
         for elements in myData["results"].arrayValue

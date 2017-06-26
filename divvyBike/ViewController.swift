@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         let station = stations[indexPath.row]
-        cell.textLabel?.text = station["location"]
+        cell.textLabel?.text = station["stationName"]
         cell.detailTextLabel?.text = station["dock"]
         return cell
     }

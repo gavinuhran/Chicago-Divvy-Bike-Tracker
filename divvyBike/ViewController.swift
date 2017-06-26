@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var myTableView: UITableView!
 
@@ -24,9 +24,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return stations.count
+    }
     
-   
-
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let station = stations[indexPath.row]
+        cell.textLabel?.text = station["location"]
+        cell.detailTextLabel?.text = station["dock"]
+        return cell
+    }
 }
 

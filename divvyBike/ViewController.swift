@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var myTableView: UITableView!
-
+    var stations = [[String: String]]()
     
     var stations = [[String: String]]()
     override func viewDidLoad()

@@ -103,6 +103,7 @@
 				0A48F5411F0159070067BD1D /* ViewController.swift */,
 				7B59F0861F01606400CBCEF0 /* SwiftyJSON-1.swift */,
 				0A48F5431F0159070067BD1D /* Main.storyboard */,
+				0A48F56D1F0160CA0067BD1D /* SwiftyJSON-1.swift */,
 				0A48F5461F0159070067BD1D /* Assets.xcassets */,
 				0A48F5481F0159070067BD1D /* LaunchScreen.storyboard */,
 				0A48F54B1F0159070067BD1D /* Info.plist */,

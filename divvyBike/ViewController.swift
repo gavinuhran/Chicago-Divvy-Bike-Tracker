@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         let station = stations[indexPath.row]
         cell.textLabel?.text = station["stationName"]!
-        cell.detailTextLabel?.text = "\(station["availabledocks"])! of the \(station["totalDocks"])! docks are open"
+        cell.detailTextLabel?.text = "\(station["availableDocks"])! of the \(station["totalDocks"])! docks are open"
         return cell
     }
     
@@ -49,7 +49,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let stationName = elements["stationName"].stringValue
             let totalDocks = elements["totalDocks"].stringValue
             let availableDocks = elements["availableDocks"].stringValue
-            let obj = ["stationName": stationName, "availableDocks": availableDocks, "totalDocks": totalDocks]
+            let latitude = elements["latitude"].stringValue
+            let longitude = elements["longitude"].stringValue
+            let obj = ["stationName": stationName, "availableDocks": availableDocks, "totalDocks": totalDocks, "latitude": latitude, "longitude": longitude]
             stations.append(obj)
         }
         myTableView.reloadData()
@@ -57,12 +59,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let indexPath = myTableView.indexPathForSelectedRow
-        {
-            let station = stations[indexPath.row]
+            let station = stations[(myTableView.indexPathForSelectedRow?.row)!]
             let dvc = segue.destination as! DetailViewController
             dvc.detailItem = station
-        }
     }
 }
 

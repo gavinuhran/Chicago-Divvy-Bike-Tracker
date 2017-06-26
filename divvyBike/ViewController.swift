@@ -47,11 +47,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         for elements in myData["results"].arrayValue
         {
-            let title = elements["title"].stringValue
-            let id = elements["id"].stringValue
-            let body = elements["body"].stringValue
+            let name = elements["stationName"].stringValue
+            let capacity = elements["availableDocks"].stringValue
+            let available = elements["availableBikes"].stringValue
             
-            let obj = ["title": title, "id": id, "body": body]
+            let obj = ["stationName": name, "availableDocks": capacity, "availableBikes": available]
             stations.append(obj)
         }
         myTableView.reloadData()
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let indexPath = myTableView.indexPathForSelectedRow
         {
             let station = stations[indexPath.row]
-            let dvc = segue.destination as! DetailedViewController
+            let dvc = segue.destination as! DetailViewController
             dvc.detailItem = station
         }
     }

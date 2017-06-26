@@ -18,7 +18,7 @@ class DetailViewController: UIViewController
     {
         
         super.viewDidLoad()
-        myTextView.text = detailItem["title"]!+"\n"+"\n"+detailItem["body"]!
+        myTextView.text = detailItem["stationName"]!+"\n"+"\n"+detailItem["dock"]!
         
         
 

@@ -35,10 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! ViewControllerTableViewCell
         let station = stations[indexPath.row]
-        cell.textLabel?.text = station["stationName"]!
-        cell.detailTextLabel?.text = "\(station["availabledocks"])! of the \(station["totalDocks"])! docks are open"
+        cell.cellLabel.text = "\(station["stationName"])!/n\(station["availabledocks"])! of the \(station["totalDocks"])! docks are open"
+        //cell.detailTextLabel?.text = "\(station["availabledocks"])! of the \(station["totalDocks"])! docks are open"
         return cell
     }
     

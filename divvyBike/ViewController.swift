@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let myData = try? Data(contentsOf: url, options: []) //returns data objects and checks for error
             {
                 let json = JSON(myData)
-                print(json["stationBeanList"][id].stringValue)
+                print(json["stationBeanList"]["id"].stringValue)
                 parse(myData: json)
             }
         }

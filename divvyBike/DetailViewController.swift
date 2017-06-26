@@ -12,17 +12,13 @@ class DetailViewController: UIViewController
 {
 
     @IBOutlet weak var myTextView: UITextView!
-    
     var detailItem:[String: String]!
+    
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
-        myTextView.text = detailItem["stationName"]!+"\n"+"\n"+detailItem["dock"]!
-        
-        
-
-        
+        myTextView.text = detailItem["stationName"]! + "\n" + "\n" + "There are " + detailItem["availableDocks"]! + " docks available out of " + detailItem["totalDocks"]! + " docks!"
     }
 
     

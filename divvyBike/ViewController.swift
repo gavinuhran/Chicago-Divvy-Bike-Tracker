@@ -22,7 +22,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let myData = try? Data(contentsOf: url, options: []) //returns data objects and checks for error
             {
                 let json = JSON(myData)
-                print(json["stationBeanList"]["id"].stringValue)
                 parse(myData: json)
             }
         }
@@ -38,20 +37,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         let station = stations[indexPath.row]
-        cell.textLabel?.text = station["stationName"]
-        cell.detailTextLabel?.text = station["dock"]
+        cell.textLabel?.text = station["stationName"]!
+        cell.detailTextLabel?.text = "\(station["availabledocks"])! of the \(station["totalDocks"])! docks are open"
         return cell
     }
     
     func parse(myData: JSON)
     {
-        for elements in myData["results"].arrayValue
+        for elements in myData["stationBeanList"].arrayValue
         {
-            let name = elements["stationName"].stringValue
-            let capacity = elements["availableDocks"].stringValue
-            let available = elements["availableBikes"].stringValue
-            
-            let obj = ["stationName": name, "availableDocks": capacity, "availableBikes": available]
+            let stationName = elements["stationName"].stringValue
+            let totalDocks = elements["totalDocks"].stringValue
+            let availableDocks = elements["availableDocks"].stringValue
+            let obj = ["stationName": stationName, "availableDocks": availableDocks, "totalDocks": totalDocks]
             stations.append(obj)
         }
         myTableView.reloadData()

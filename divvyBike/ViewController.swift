@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var myTableView: UITableView!
-    var stations = [[String: String]]()
+
     
+    var petition = [[String: String]]()
     override func viewDidLoad()
     {
         super.viewDidLoad()

@@ -14,6 +14,7 @@
 		0A48F54A1F0159070067BD1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A48F5481F0159070067BD1D /* LaunchScreen.storyboard */; };
 		0A48F5551F0159080067BD1D /* divvyBikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A48F5541F0159080067BD1D /* divvyBikeTests.swift */; };
 		0A48F5601F0159080067BD1D /* divvyBikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A48F55F1F0159080067BD1D /* divvyBikeUITests.swift */; };
+		0A48F56E1F0160CA0067BD1D /* SwiftyJSON-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A48F56D1F0160CA0067BD1D /* SwiftyJSON-1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0A48F55B1F0159080067BD1D /* divvyBikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = divvyBikeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A48F55F1F0159080067BD1D /* divvyBikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = divvyBikeUITests.swift; sourceTree = "<group>"; };
 		0A48F5611F0159080067BD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A48F56D1F0160CA0067BD1D /* SwiftyJSON-1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyJSON-1.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				0A48F53F1F0159070067BD1D /* AppDelegate.swift */,
 				0A48F5411F0159070067BD1D /* ViewController.swift */,
 				0A48F5431F0159070067BD1D /* Main.storyboard */,
+				0A48F56D1F0160CA0067BD1D /* SwiftyJSON-1.swift */,
 				0A48F5461F0159070067BD1D /* Assets.xcassets */,
 				0A48F5481F0159070067BD1D /* LaunchScreen.storyboard */,
 				0A48F54B1F0159070067BD1D /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				0A48F5421F0159070067BD1D /* ViewController.swift in Sources */,
 				0A48F5401F0159070067BD1D /* AppDelegate.swift in Sources */,
+				0A48F56E1F0160CA0067BD1D /* SwiftyJSON-1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

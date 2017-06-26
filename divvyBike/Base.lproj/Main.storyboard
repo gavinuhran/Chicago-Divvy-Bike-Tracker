@@ -65,10 +65,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Td-K6-nfW"/>
+                    <connections>
+                        <outlet property="myTableView" destination="F5w-B6-SOf" id="2EF-4X-91R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808.79999999999995" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="850" y="-645"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DlM-2a-6Od">

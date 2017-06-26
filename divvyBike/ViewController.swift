@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         let station = stations[indexPath.row]
-        cell.textLabel?.text = station["location"]
+        cell.textLabel?.text = station["stationName"]
         cell.detailTextLabel?.text = station["dock"]
         return cell
     }
@@ -61,9 +61,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         if let indexPath = myTableView.indexPathForSelectedRow
         {
-            let petition = stations[indexPath.row]
-            let idvc = segue.destination as! InDepthViewCo3333333333333333333490-\ntroller
-            idvc.detailItem = petition
+            let station = stations[indexPath.row]
+            let dvc = segue.destination as! DetailedViewController
+            dvc.detailItem = station
         }
     }
 }

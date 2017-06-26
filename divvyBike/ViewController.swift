@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var myTableView: UITableView!
     var stations = [[String: String]]()
     
-    var stations = [[String: String]]()
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -56,7 +55,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             stations.append(obj)
         }
         myTableView.reloadData()
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let indexPath = myTableView.indexPathForSelectedRow
+        {
+            let petition = stations[indexPath.row]
+            let idvc = segue.destination as! InDepthViewController
+            idvc.detailItem = petition
+        }
     }
 }
+
 

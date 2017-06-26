@@ -48,6 +48,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5XT-y2-fvl" kind="show" id="HHb-Z3-Dyi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -84,12 +87,26 @@
                     <view key="view" contentMode="scaleToFill" id="wFD-qw-7Iw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="LAbel" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="weN-ZV-Eu0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="weN-ZV-Eu0" firstAttribute="top" secondItem="ira-Sn-XBJ" secondAttribute="bottom" id="HFa-Kt-Qmb"/>
+                            <constraint firstAttribute="trailing" secondItem="weN-ZV-Eu0" secondAttribute="trailing" id="OvU-HU-j9e"/>
+                            <constraint firstItem="q8e-vb-wri" firstAttribute="top" secondItem="weN-ZV-Eu0" secondAttribute="bottom" id="nT7-lV-ITG"/>
+                            <constraint firstItem="weN-ZV-Eu0" firstAttribute="leading" secondItem="wFD-qw-7Iw" secondAttribute="leading" id="wmN-UB-tgz"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dp8-d5-1a3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-634"/>
+            <point key="canvasLocation" x="1588" y="-645.42728635682158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DlM-2a-6Od">

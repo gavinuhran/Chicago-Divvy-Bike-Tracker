@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet weak var myTableView: UITableView!
 
+    
+    var petition = [[String: String]]()
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
-        
-        
+        let urlString = "https://feeds.divvybikes.com/stations/stations.json"
         
         
        

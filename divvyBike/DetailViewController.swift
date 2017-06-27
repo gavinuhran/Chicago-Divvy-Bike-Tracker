@@ -34,6 +34,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         myTextView.text = detailItem["stationName"]! + "\n" + "\n" + "There are " + detailItem["availableDocks"]! + " docks available out of " + detailItem["totalDocks"]! + " docks!"
         
+        setCenterofMapToLOcation(location: coordinate)
         addPinAnnotationToMapView(location: coordinate)
     }
 
@@ -47,7 +48,12 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         annotation.coordinate = location
         myMapView.addAnnotation(annotation)
     }
-
+    func setCenterofMapToLOcation(location: CLLocationCoordinate2D)
+    {
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let reigon = MKCoordinateRegion(center: location, span: span)
+        myMapView.setRegion(reigon, animated: true)
+    }
   
 
 }

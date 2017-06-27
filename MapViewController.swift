@@ -15,17 +15,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var myMapView2: MKMapView!
     
-    var detailItem:[String: String]!
     let locationManager = CLLocationManager()
     var coordinate = CLLocationCoordinate2DMake(0.0, 0.0)
     var stationsArray = [[String:String]]()
     
     
     override func viewDidLoad()
-    {
-       
-        super.viewDidLoad()
-           coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
+    {        super.viewDidLoad()
+
+        for station in stationsArray
+        {
+        coordinate = CLLocationCoordinate2DMake(Double(station["latitude"]!)!, Double(station["longitude"]!)!)
+            
+        }
+        
         locationManager.delegate = self
         
         myMapView2.delegate = self

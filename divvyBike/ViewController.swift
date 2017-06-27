@@ -58,9 +58,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        if segue.identifier == "detailView"
+        {
         let station = stations[(myTableView.indexPathForSelectedRow?.row)!]
         let dvc = segue.destination as! DetailViewController
         dvc.detailItem = station
+        }
+        
+        if segue.identifier == "mapView"
+        {
+           
+            let mvc = segue.destination as! MapViewController
+            mvc.stationsArray = stations
+           
+        }
     }
 }
 

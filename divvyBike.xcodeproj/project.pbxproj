@@ -15,6 +15,7 @@
 		0A48F5551F0159080067BD1D /* divvyBikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A48F5541F0159080067BD1D /* divvyBikeTests.swift */; };
 		0A48F5601F0159080067BD1D /* divvyBikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A48F55F1F0159080067BD1D /* divvyBikeUITests.swift */; };
 		0A48F5701F0165A20067BD1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A48F56F1F0165A20067BD1D /* SwiftyJSON.swift */; };
+		0AEE35851F029DD000DCF1F1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE35841F029DD000DCF1F1 /* MapViewController.swift */; };
 		7B17409B1F016B870092B452 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17409A1F016B870092B452 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		0A48F55F1F0159080067BD1D /* divvyBikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = divvyBikeUITests.swift; sourceTree = "<group>"; };
 		0A48F5611F0159080067BD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A48F56F1F0165A20067BD1D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		0AEE35841F029DD000DCF1F1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		7B17409A1F016B870092B452 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				0A48F5411F0159070067BD1D /* ViewController.swift */,
 				7B17409A1F016B870092B452 /* DetailViewController.swift */,
 				0A48F5431F0159070067BD1D /* Main.storyboard */,
+				0AEE35841F029DD000DCF1F1 /* MapViewController.swift */,
 				0A48F5461F0159070067BD1D /* Assets.xcassets */,
 				0A48F56F1F0165A20067BD1D /* SwiftyJSON.swift */,
 				0A48F5481F0159070067BD1D /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				0A48F5701F0165A20067BD1D /* SwiftyJSON.swift in Sources */,
 				0A48F5421F0159070067BD1D /* ViewController.swift in Sources */,
 				0A48F5401F0159070067BD1D /* AppDelegate.swift in Sources */,
+				0AEE35851F029DD000DCF1F1 /* MapViewController.swift in Sources */,
 				7B17409B1F016B870092B452 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

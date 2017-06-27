@@ -24,7 +24,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     override func viewDidLoad()
     {
-        coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
+      //  coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
         super.viewDidLoad()
         locationManager.delegate = self
         myMapView.delegate = self

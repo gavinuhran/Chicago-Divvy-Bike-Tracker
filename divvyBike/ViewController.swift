@@ -56,6 +56,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         myTableView.reloadData()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let station = stations[(myTableView.indexPathForSelectedRow?.row)!]
+        let dvc = segue.destination as! DetailViewController
+        dvc.detailItem = station
+    }
 }
+
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WUO-QQ-Igf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WUO-QQ-Igf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" id="7Td-K6-nfW">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="Qy9-pW-Ft3">
                             <connections>
-                                <segue destination="ees-jj-eB4" kind="show" id="fW5-5K-fQJ"/>
+                                <segue destination="ees-jj-eB4" kind="show" id="HR5-P5-Mep"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -156,13 +156,10 @@
                             <constraint firstItem="oPU-So-PBe" firstAttribute="leading" secondItem="Rdt-KQ-ayU" secondAttribute="leading" id="vp9-Xf-QHR"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="myMapView2" destination="oPU-So-PBe" id="C5o-KF-iyJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UV-4L-Of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="-645"/>
+            <point key="canvasLocation" x="849" y="-1357"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DlM-2a-6Od">

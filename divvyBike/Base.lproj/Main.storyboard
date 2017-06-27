@@ -58,7 +58,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LGD-Ls-Wnf"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LT-FF-bB3">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LT-FF-bB3">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.62458282417628586" green="0.97652524709701538" blue="0.74653999502984969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -170,7 +170,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="myMapView2" destination="oPU-So-PBe" id="C5o-KF-iyJ"/>
+                        <outlet property="myMapView2" destination="oPU-So-PBe" id="Rsl-Ig-2ja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UV-4L-Of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,4 +196,7 @@
             <point key="canvasLocation" x="116" y="-644.52773613193403"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yH8-3k-qSv"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
     @IBOutlet weak var myTextView: UITextView!
     @IBOutlet weak var myMapView: MKMapView!
-    @IBOutlet weak var myMapView2: MKMapView!
+   
    
     var detailItem:[String: String]!
     let locationManager = CLLocationManager()
@@ -24,19 +24,17 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     override func viewDidLoad()
     {
-        coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
+        //coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
         super.viewDidLoad()
         locationManager.delegate = self
         myMapView.delegate = self
-        myMapView2.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
         
         myMapView.showsUserLocation = true
         myMapView.userLocation.title = "My Location"
-        myMapView2.showsUserLocation = true
-        myMapView2.userLocation.title = "My Location"
+   
         
         myTextView.text = detailItem["stationName"]! + "\n" + "\n" + "There are " + detailItem["availableDocks"]! + " docks available out of " + detailItem["totalDocks"]! + " docks!"
         
@@ -53,24 +51,15 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         myMapView.addAnnotation(annotation)
-        myMapView2.addAnnotation(annotation)
+       
     }
     func setCenterofMapToLocation(location: CLLocationCoordinate2D)
     {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let reigon = MKCoordinateRegion(center: location, span: span)
         myMapView.setRegion(reigon, animated: true)
-        myMapView2.setRegion(reigon, animated: true)
+        
     }
-    func mapParse(myData: JSON)
-    {
-       for elements in myData["stationBeanList"].arrayValue
-       {
-        let latitude1 = elements["latitude"].stringValue
-        let longitude1 = elements["longitude"].stringValue
-        let obj1 = ["latitude": latitude1, "longitude": longitude1]
-        stationsArray.append(obj1)
-        }
-    }
+   
 
 }

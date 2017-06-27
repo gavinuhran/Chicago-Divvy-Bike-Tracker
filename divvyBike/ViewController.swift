@@ -39,6 +39,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let station = stations[indexPath.row]
         cell.textLabel?.text = station["stationName"]!
         cell.detailTextLabel?.text = station["availableDocks"]! + " of the " + station["totalDocks"]! + " docks are open"
+        if Double(station["availableDocks"]!)! / Double(station["totalDocks"]!)! > 0.67
+        {
+            cell.imageView?.image = UIImage(named: "green")
+        }
+        else if (Double(station["availableDocks"]!)! / Double(station["totalDocks"]!)! <= 0.67) && (Double(station["availableDocks"]!)! / Double(station["totalDocks"]!)! >= 0.33)
+        {
+            cell.imageView?.image = UIImage(named: "yellow")
+        }
+        else if Double(station["availableDocks"]!)! / Double(station["totalDocks"]!)! < 0.33
+        {
+            cell.imageView?.image = UIImage(named: "red")
+        }
         return cell
     }
     
@@ -67,7 +79,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if segue.identifier == "mapView"
         {
-           
             let mvc = segue.destination as! MapViewController
             mvc.stationsArray = stations
            

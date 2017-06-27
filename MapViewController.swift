@@ -18,7 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var detailItem1:[String: String]!
     let locationManager1 = CLLocationManager()
     var coordinate1 = CLLocationCoordinate2DMake(0.0, 0.0)
-    var stationsArray1 = [[String:String]]()
+    var stationsArray = [[String:String]]()
     
     
     override func viewDidLoad()
@@ -67,7 +67,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let latitude1 = elements["latitude"].stringValue
             let longitude1 = elements["longitude"].stringValue
             let obj1 = ["latitude": latitude1, "longitude": longitude1]
-            stationsArray1.append(obj1)
+            stationsArray.append(obj1)
         }
     }
 

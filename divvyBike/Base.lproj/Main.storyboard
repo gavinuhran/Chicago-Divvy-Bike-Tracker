@@ -21,26 +21,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F5w-B6-SOf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F5w-B6-SOf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" textLabel="A5p-jM-hub" detailTextLabel="V4w-v7-fjL" rowHeight="59" style="IBUITableViewCellStyleSubtitle" id="eIH-NW-d31" customClass="ViewControllerTableViewCell" customModule="divvyBike" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="59"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" textLabel="A5p-jM-hub" detailTextLabel="V4w-v7-fjL" rowHeight="55" style="IBUITableViewCellStyleSubtitle" id="eIH-NW-d31" customClass="ViewControllerTableViewCell" customModule="divvyBike" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eIH-NW-d31" id="Fg5-j3-Qom" customClass="ViewControllerTableViewCell" customModule="divvyBike" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A5p-jM-hub">
-                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V4w-v7-fjL">
-                                                    <rect key="frame" x="15" y="32.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="15" y="30.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -58,41 +58,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LGD-Ls-Wnf"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LT-FF-bB3">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.62458282417628586" green="0.97652524709701538" blue="0.74653999502984969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fEd-JX-5lN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
-                                <state key="normal" title="Take Me To Map"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5LT-FF-bB3" secondAttribute="bottom" id="7lc-jD-4Qu"/>
-                            <constraint firstItem="5LT-FF-bB3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pqt-PO-OT6"/>
                             <constraint firstItem="F5w-B6-SOf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WI6-wh-x7t"/>
                             <constraint firstAttribute="trailing" secondItem="F5w-B6-SOf" secondAttribute="trailing" id="p9A-hs-Q6p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F5w-B6-SOf" secondAttribute="bottom" constant="50" id="q4n-Me-EWm"/>
-                            <constraint firstAttribute="trailing" secondItem="5LT-FF-bB3" secondAttribute="trailing" id="vmT-Zc-40g"/>
                             <constraint firstItem="F5w-B6-SOf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zu1-Wu-Yq0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7Td-K6-nfW">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="Qy9-pW-Ft3">
-                            <connections>
-                                <segue destination="ees-jj-eB4" kind="show" identifier="mapVIew" id="HR5-P5-Mep"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="7Td-K6-nfW"/>
                     <connections>
                         <outlet property="myTableView" destination="F5w-B6-SOf" id="5XS-Fz-MIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1321" y="-1928"/>
+            <point key="canvasLocation" x="-1322.4000000000001" y="-1928.1859070464768"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="cyR-Sr-39s">
@@ -157,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oPU-So-PBe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

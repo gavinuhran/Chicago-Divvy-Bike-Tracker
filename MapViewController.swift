@@ -15,22 +15,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var myMapView2: MKMapView!
     
-    var detailItem:[String: String]!
-    let locationManager = CLLocationManager()
-    var coordinate = CLLocationCoordinate2DMake(0.0, 0.0)
-    var stationsArray = [[String:String]]()
+    var detailItem1:[String: String]!
+    let locationManager1 = CLLocationManager()
+    var coordinate1 = CLLocationCoordinate2DMake(0.0, 0.0)
+    var stationsArray1 = [[String:String]]()
     
     
     override func viewDidLoad()
     {
        
         super.viewDidLoad()
-           coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
-        locationManager.delegate = self
+           coordinate1 = CLLocationCoordinate2DMake(Double(detailItem1["latitude"]!)!, Double(detailItem1["longitude"]!)!)
+        locationManager1.delegate = self
         
         myMapView2.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager1.requestAlwaysAuthorization()
+        locationManager1.startUpdatingLocation()
         
         
       
@@ -39,12 +39,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         
         
-        setCenterofMapToLocation(location: coordinate)
-        addPinAnnotationToMapView(location: coordinate)
+        setCenterofMapToLocation(location: coordinate1)
+        addPinAnnotationToMapView(location: coordinate1)
     }
     func locationManager( manager: CLLocationManager, didUpdateLocations location: [CLLocation])
     {
-        print(locationManager.location)
+        print(locationManager1.location)
     }
     func addPinAnnotationToMapView(location: CLLocationCoordinate2D)
     {
@@ -67,7 +67,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let latitude1 = elements["latitude"].stringValue
             let longitude1 = elements["longitude"].stringValue
             let obj1 = ["latitude": latitude1, "longitude": longitude1]
-            stationsArray.append(obj1)
+            stationsArray1.append(obj1)
         }
     }
 

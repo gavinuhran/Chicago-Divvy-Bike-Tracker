@@ -68,7 +68,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Take Me To Map"/>
                                 <connections>
-                                    <segue destination="ees-jj-eB4" kind="show" id="wkf-n0-prQ"/>
+                                    <segue destination="ees-jj-eB4" kind="show" id="yH8-3k-qSv"/>
                                 </connections>
                             </button>
                         </subviews>

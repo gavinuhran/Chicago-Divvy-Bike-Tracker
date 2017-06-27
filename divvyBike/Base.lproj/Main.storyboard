@@ -80,7 +80,7 @@
                     <navigationItem key="navigationItem" id="7Td-K6-nfW">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="Qy9-pW-Ft3">
                             <connections>
-                                <segue destination="ees-jj-eB4" kind="show" identifier="mapVIew" id="HR5-P5-Mep"/>
+                                <segue destination="ees-jj-eB4" kind="show" identifier="mapView" id="HR5-P5-Mep"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -16,15 +16,15 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet weak var myMapView: MKMapView!
    
    
-    var detailItem:[String: String]!
+    var detailItems:[String: String]!
     let locationManager = CLLocationManager()
     var coordinate = CLLocationCoordinate2DMake(0.0, 0.0)
-    var stationsArray = [[String:String]]()
+    
     
     
     override func viewDidLoad()
     {
-        coordinate = CLLocationCoordinate2DMake(Double(detailItem["latitude"]!)!, Double(detailItem["longitude"]!)!)
+        coordinate = CLLocationCoordinate2DMake(Double(detailItems["latitude"]!)!, Double(detailItems["longitude"]!)!)
         super.viewDidLoad()
         locationManager.delegate = self
         myMapView.delegate = self
@@ -36,7 +36,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         myMapView.userLocation.title = "My Location"
    
         
-        myTextView.text = detailItem["stationName"]! + "\n" + "\n" + "There are " + detailItem["availableDocks"]! + " docks available out of " + detailItem["totalDocks"]! + " docks!"
+        myTextView.text = detailItems["stationName"]! + "\n" + "\n" + "There are " + detailItems["availableDocks"]! + " docks available out of " + detailItems["totalDocks"]! + " docks!"
         
         setCenterofMapToLocation(location: coordinate)
         addPinAnnotationToMapView(location: coordinate)
@@ -51,6 +51,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         myMapView.addAnnotation(annotation)
+        annotation.title = detailItems["stationName"]
+        annotation.subtitle = detailItems["city"]
        
     }
     func setCenterofMapToLocation(location: CLLocationCoordinate2D)

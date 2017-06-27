@@ -62,15 +62,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         {
         let station = stations[(myTableView.indexPathForSelectedRow?.row)!]
         let dvc = segue.destination as! DetailViewController
-        dvc.detailItem = station
+        dvc.detailItems = station
         }
         
         if segue.identifier == "mapView"
         {
-           
             let mvc = segue.destination as! MapViewController
-            mvc.stationsArray = stations
-           
+            mvc.detailItems = stations
+
         }
     }
 }

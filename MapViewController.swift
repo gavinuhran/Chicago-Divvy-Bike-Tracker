@@ -10,68 +10,53 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
+class MapViewController: UIViewController, CLLocationManagerDelegate
 {
-    
+    var detailItems: [[String: String]] = []
     @IBOutlet weak var myMapView2: MKMapView!
     
-    let locationManager = CLLocationManager()
-    var coordinate = CLLocationCoordinate2DMake(0.0, 0.0)
-    var stationsArray = [[String:String]]()
+    let manager = CLLocationManager()
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations[0]
+        let span : MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        myMapView2.setRegion(region, animated: true)
+        self.myMapView2.showsUserLocation = true
+    }
     
     
     override func viewDidLoad()
-    {        super.viewDidLoad()
-
-        for station in stationsArray
+    {
+        super.viewDidLoad()
+        manager.delegate = self
+        
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
+        
+        for items in detailItems
         {
-        coordinate = CLLocationCoordinate2DMake(Double(station["latitude"]!)!, Double(station["longitude"]!)!)
-            
-        }
-        
-        locationManager.delegate = self
-        
-        myMapView2.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        
       
-        myMapView2.showsUserLocation = true
-        myMapView2.userLocation.title = "My Location"
-        
-        
-        
-        setCenterofMapToLocation(location: coordinate)
-        addPinAnnotationToMapView(location: coordinate)
-    }
-    func locationManager( manager: CLLocationManager, didUpdateLocations location: [CLLocation])
-    {
-        print(locationManager.location)
-    }
-    func addPinAnnotationToMapView(location: CLLocationCoordinate2D)
-    {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        
-        myMapView2.addAnnotation(annotation)
-    }
-    func setCenterofMapToLocation(location: CLLocationCoordinate2D)
-    {
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let reigon = MKCoordinateRegion(center: location, span: span)
- 
-        myMapView2.setRegion(reigon, animated: true)
-    }
-    func mapParse(myData: JSON)
-    {
-        for elements in myData["stationBeanList"].arrayValue
-        {
-            let latitude1 = elements["latitude"].stringValue
-            let longitude1 = elements["longitude"].stringValue
-            let obj1 = ["latitude": latitude1, "longitude": longitude1]
-            stationsArray.append(obj1)
+            print("latitude:" + items["latitude"]!)
+            var centerLocation = CLLocationCoordinate2DMake(Double(items["latitude"]!)!,Double(items["longitude"]!)!)
+            var mapSpan = MKCoordinateSpanMake(0.08, 0.08)
+            var mapRegion = MKCoordinateRegionMake(centerLocation, mapSpan)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = centerLocation
+            myMapView2.addAnnotation(annotation)
+            annotation.title = items["stationName"]
+            annotation.subtitle = items["city"]
         }
-    }
+        
+       
 
+
+}
+    
+    
+    
 }

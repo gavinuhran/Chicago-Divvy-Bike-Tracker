@@ -95,7 +95,7 @@
                                 <state key="normal" title="Map Here"/>
                             </button>
                             <connections>
-                                <segue destination="ees-jj-eB4" kind="show" id="75T-Ei-Nav"/>
+                                <segue destination="ees-jj-eB4" kind="show" id="awP-PP-9Bx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

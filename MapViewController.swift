@@ -10,9 +10,9 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
+class MapViewController: UIViewController, CLLocationManagerDelegate
 {
-    
+    var detailItems: [[String: String]] = []
     @IBOutlet weak var myMapView2: MKMapView!
     
     var detailItem1:[String: String]!
@@ -46,29 +46,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     {
         print(locationManager1.location)
     }
-    func addPinAnnotationToMapView(location: CLLocationCoordinate2D)
+    
+    
+    override func viewDidLoad()
     {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
+        super.viewDidLoad()
+        manager.delegate = self
         
-        myMapView2.addAnnotation(annotation)
-    }
-    func setCenterofMapToLocation(location: CLLocationCoordinate2D)
-    {
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let reigon = MKCoordinateRegion(center: location, span: span)
- 
-        myMapView2.setRegion(reigon, animated: true)
-    }
-    func mapParse(myData: JSON)
-    {
-        for elements in myData["stationBeanList"].arrayValue
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
+        
+        for items in detailItems
         {
-            let latitude1 = elements["latitude"].stringValue
-            let longitude1 = elements["longitude"].stringValue
-            let obj1 = ["latitude": latitude1, "longitude": longitude1]
-            stationsArray.append(obj1)
+      
+            print("latitude:" + items["latitude"]!)
+            var centerLocation = CLLocationCoordinate2DMake(Double(items["latitude"]!)!,Double(items["longitude"]!)!)
+            var mapSpan = MKCoordinateSpanMake(0.08, 0.08)
+            var mapRegion = MKCoordinateRegionMake(centerLocation, mapSpan)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = centerLocation
+            myMapView2.addAnnotation(annotation)
+            annotation.title = items["stationName"]
+            annotation.subtitle = items["city"]
         }
-    }
+        
+       
 
+
+}
+    
+    
+    
 }

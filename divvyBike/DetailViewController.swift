@@ -33,13 +33,20 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         myMapView.userLocation.title = "My Location"
         
         myTextView.text = detailItem["stationName"]! + "\n" + "\n" + "There are " + detailItem["availableDocks"]! + " docks available out of " + detailItem["totalDocks"]! + " docks!"
+        
+        addPinAnnotationToMapView(location: coordinate)
     }
 
     func locationManager( manager: CLLocationManager, didUpdateLocations location: [CLLocation])
     {
         print(locationManager.location)
     }
-    
+    func addPinAnnotationToMapView(location: CLLocationCoordinate2D)
+    {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        myMapView.addAnnotation(annotation)
+    }
 
   
 
